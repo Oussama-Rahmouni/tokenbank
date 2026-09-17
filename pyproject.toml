@@ -1,0 +1,34 @@
+[project]
+name = "tokenbank"
+version = "0.1.0"
+description = "Real-browser challenge solver + warm token bank: solve a bot challenge once, replay the clearance a thousand times"
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.11"
+dependencies = [
+  "fastapi>=0.115",
+  "uvicorn[standard]>=0.30",
+  "patchright>=1.54",
+  "aiosqlite>=0.20",
+  "pydantic>=2.0",
+]
+
+[project.optional-dependencies]
+camoufox = ["camoufox>=0.4"]
+dev = ["pytest>=8.0", "pytest-asyncio>=0.23"]
+
+[project.scripts]
+tokenbank-server = "tokenbank.main:run"
+tokenbank-probe = "tokenbank.probe:main"
+tokenbank-bench = "tokenbank.benchmark:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["tokenbank"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
