@@ -5,6 +5,9 @@ description = "Real-browser challenge solver + warm token bank: solve a bot chal
 readme = "README.md"
 license = "MIT"
 requires-python = ">=3.11"
+authors = [{name = "Oussama Rahmouni"}]
+keywords = ["anti-bot", "web-scraping", "cloudflare", "turnstile", "playwright", "tokens"]
+classifiers = ["License :: OSI Approved :: MIT License", "Programming Language :: Python :: 3"]
 dependencies = [
   "fastapi>=0.115",
   "uvicorn[standard]>=0.30",
@@ -21,6 +24,11 @@ dev = ["pytest>=8.0", "pytest-asyncio>=0.23"]
 tokenbank-server = "tokenbank.main:run"
 tokenbank-probe = "tokenbank.probe:main"
 tokenbank-bench = "tokenbank.benchmark:main"
+
+[project.urls]
+Homepage = "https://github.com/Oussama-Rahmouni/tokenbank"
+Repository = "https://github.com/Oussama-Rahmouni/tokenbank"
+Issues = "https://github.com/Oussama-Rahmouni/tokenbank/issues"
 
 [build-system]
 requires = ["hatchling"]
